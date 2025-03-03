@@ -5,7 +5,6 @@ RM = rm -f
 
 FILES = main \
 		Zombie \
-		newZombie \
 		zombieHorde \
 
 SRCS = $(addsuffix .cpp, $(FILES))

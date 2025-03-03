@@ -11,5 +11,4 @@ public:
     std::string getName();
 };
 
-Zombie  *newZombie();
 Zombie  *zombieHorde(int N, std::string name);
