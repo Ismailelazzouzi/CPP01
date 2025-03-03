@@ -1,9 +1,12 @@
 NAME = brainz
 CPP = c++
-CFLAGS = -Wall -Wextra -Werror
+FLAGS = -Wall -Wextra -Werror
 RM = rm -f
 
-FILES = 
+FILES = main \
+		Zombie \
+		newZombie \
+		randomChump \
 
 SRCS = $(addsuffix .cpp, $(FILES))
 
@@ -12,10 +15,10 @@ OBJS = $(addsuffix .o, $(FILES))
 all: $(NAME)
 
 $(NAME): $(OBJS)
-	$(CPP) $(CFLAGS) $^ -o $@
+	$(CPP) $(FLAGS) $^ -o $@
 
 %.o: %.cpp Zombie.hpp
-	$(CPP) $(CFLAGS) -c $< -o $@
+	$(CPP) $(FLAGS) -c $< -o $@
 
 clean:
 	$(RM) $(OBJS)
