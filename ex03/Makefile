@@ -1,9 +1,12 @@
-NAME = exec
+NAME = attack
 CPP = c++
 FLAGS = -Wall -Wextra -Werror
 RM = rm -f
 
 FILES = main \
+		HumanA \
+		HumanB \
+		Weapon \
 
 SRCS = $(addsuffix .cpp, $(FILES))
 
@@ -14,7 +17,7 @@ all: $(NAME)
 $(NAME): $(OBJS)
 	$(CPP) $(FLAGS) $^ -o $@
 
-%.o: %.cpp
+%.o: %.cpp HumanA.hpp
 	$(CPP) $(FLAGS) -c $< -o $@
 
 clean:
